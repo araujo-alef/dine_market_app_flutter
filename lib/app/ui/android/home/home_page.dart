@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
 
@@ -50,7 +51,6 @@ class HomePage extends StatelessWidget {
                   children: [
                     Container(
                       height: height * 5.3,
-                      width: width * 70,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(10))
@@ -58,27 +58,50 @@ class HomePage extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            height: height * 5.3,
-                            width: height * 5.3,
+                            height: width * 11.5,
+                            width: width * 11.5,
                             child: TextButton(
                               onPressed: () {},
                               child: Padding(
-                                padding: const EdgeInsets.all(7.0),
+                                padding: const EdgeInsets.all(7.2),
                                 child: Image(image: AssetImage('assets/images/search.png'),),
                               ),
                             ),
                           ),
+                          Container(
+                            width: width * 60,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                hintText: 'Search',
+                                hintStyle: TextStyle(
+                                  color: Color(0XFF212121),
+                                ),
+                                border: InputBorder.none,
+                              ),
+                              style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w500,
+                                fontSize: width * 3.5
+                              ),
+                            ),
+                          )
                         ],
                       ),
                     ),
                     Container(
-                      height: height * 5.3,
-                      width: height * 5.3,
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.all(Radius.circular(10))
-                      ),
-                    ),
+                            width: width * 11,
+                            height: height * 5.5,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              color: Color(0XFF212121),
+                            ),
+                            child: TextButton(
+                                onPressed: () {},
+                                child: Padding(
+                                  padding: const EdgeInsets.all(6),
+                                  child: Image(image: AssetImage('assets/images/sliders_icon.png')),
+                                ),
+                            ),
+                          ),
                   ],
                 ),
               )

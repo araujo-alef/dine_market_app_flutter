@@ -111,10 +111,23 @@ class HomePage extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         children: [
                           Wrap(
-                            spacing: 6,
+                            spacing: height * 0.5,
                             children: [
                               Chip(
                                 label: Text('Fresh'),
+                                onDeleted: () {},
+                                deleteIcon: Icon(Icons.close_sharp, size: height * 1.3, color: Colors.white,), 
+                                backgroundColor: Color(0XFF212121),
+                                labelStyle: GoogleFonts.poppins(
+                                  fontSize: width * 2.8,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600
+                                ),
+                                visualDensity: VisualDensity.compact,
+                                labelPadding: EdgeInsets.only(left: 8, right: 0, top: 0, bottom: 0),
+                              ),
+                              Chip(
+                                label: Text('Chicken'),
                                 onDeleted: () {},
                                 deleteIcon: Icon(Icons.close_sharp, size: height * 1.3, color: Colors.white,), 
                                 backgroundColor: Color(0XFF212121),
@@ -126,7 +139,6 @@ class HomePage extends StatelessWidget {
                                 visualDensity: VisualDensity.compact,
                                 labelPadding: EdgeInsets.only(left: 8, right: 0, top: 0, bottom: 0),
                               ),
-                              
                             ],
                           )
                         ],

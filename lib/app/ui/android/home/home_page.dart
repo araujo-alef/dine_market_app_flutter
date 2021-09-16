@@ -216,6 +216,146 @@ class HomePage extends GetView<HomeController> {
                     )
                   ],
                 ),
+              ),
+              SizedBox(height: height * 3.5,),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: width * 7),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Recomendation',
+                          style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22
+                          ),
+                        ),
+                        Text(
+                          'See all',
+                          style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: width * 7, top: height * 2, bottom: height * 2),
+                height: height * 31,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Container(
+                      width: width * 42,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Color(0XFF212121),
+                        borderRadius: BorderRadius.all(Radius.circular(20))
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(right: height * 2, left: height * 2, top: height * 2),
+                            height: height * 16,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/images/chicken.png')
+                              )
+                            ),
+                          ),
+                          Container(
+                            width: width * 42,
+                            height: height * 5,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 16.0),
+                              child: Text(
+                                'Chicken Leg',
+                                textAlign: TextAlign.start,
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.white,
+                                  fontSize: width * 4.3
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.topCenter,
+                            height: height * 8,
+                            child: Padding(
+                              padding: const EdgeInsets.all(16),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: width * 16,
+                                    child: Row(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(top: height * 0.8),
+                                          child: Text(
+                                            "\$ ",
+                                            style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.white
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          '10',
+                                          style: GoogleFonts.poppins(
+                                            fontWeight: FontWeight.w400,
+                                            color: Colors.white,
+                                            fontSize: width * 6.5
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: height * 0.8),
+                                          child: Text(
+                                            ' .50',
+                                            style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.white
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    width: width * 16,
+                                    height: height * 4,
+                                    child: ElevatedButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        'Order',
+                                        style: GoogleFonts.poppins(
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      style: TextButton.styleFrom(
+                                        backgroundColor: Color(0XFF585858),
+                                        shape: const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                                      ),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               )
             ],
           ),

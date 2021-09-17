@@ -6,7 +6,7 @@ void main() {
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
     title: "Dine Market",
-    initialRoute: '/',
+    initialRoute: '/product-details',
     getPages: AppPages.routes,
   ));
 }

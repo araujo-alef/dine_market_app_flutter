@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -445,17 +446,18 @@ class HomePage extends GetView<HomeController> {
               ),
             ),
             Container(
-              alignment: Alignment.center,
               height: height * 6,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: width * 4),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
                       alignment: Alignment.center,
                       width: width * 16,
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
                             height: height * 8,
@@ -501,6 +503,7 @@ class HomePage extends GetView<HomeController> {
                       ),
                     ),
                     Container(
+                      margin: EdgeInsets.only(top: height * 0.5),
                       width: width * 16,
                       height: height * 4,
                       child: TextButton(
@@ -537,7 +540,7 @@ class HomePage extends GetView<HomeController> {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Color(0XFFFFFFFF),
-          borderRadius: BorderRadius.all(Radius.circular(20))
+          borderRadius: BorderRadius.all(Radius.circular(20)),
         ),
         child: Column(
           children: [
@@ -567,11 +570,12 @@ class HomePage extends GetView<HomeController> {
               ),
             ),
             Container(
-              alignment: Alignment.center,
+              
               height: height * 6,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: width * 4),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
@@ -606,6 +610,7 @@ class HomePage extends GetView<HomeController> {
                             ),
                           ),
                           Container(
+                            margin: EdgeInsets.only(top: height * 0.5),
                             height: height * 7.2,
                             child: Padding(
                               padding: EdgeInsets.only(top: height * 0.8),

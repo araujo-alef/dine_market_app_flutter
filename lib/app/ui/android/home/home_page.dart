@@ -185,6 +185,7 @@ class HomePage extends GetView<HomeController> {
                       viewportFraction: 1,
                       enableInfiniteScroll: false,
                       onPageChanged: (index, reason) => homeController.setPositionCard(index),
+                      autoPlay: true
                     ),
                     itemBuilder: (context, index, realIndex) {
                       final assetImage = assetsImages[index];

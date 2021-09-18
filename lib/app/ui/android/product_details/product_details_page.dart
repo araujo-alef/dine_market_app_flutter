@@ -11,46 +11,12 @@ class ProductDetailsPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Color(0XFFF6F7FC),
-      /* appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Color(0XFFF6F7FC),
-        leadingWidth: width * 25,
-        
-        leading: new IconButton(
-          icon: Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(10))
-            ),
-            child: Icon(Icons.arrow_back_rounded, color: Color(0XFF212121), size: height * 2, ),
-          ),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-        actions: [
-          IconButton(
-            icon: Container(
-              
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.all(Radius.circular(10))
-              ),
-              child: Icon(Icons.arrow_back_rounded, color: Color(0XFF212121), size: height * 2, ),
-            ),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-        ],
-      ), */
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.only(left: width * 7, right: width * 7),
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only(top: height * 0.5, bottom: height * 3.5),
+                margin: EdgeInsets.only( left: width * 7, right: width * 7),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -88,17 +54,31 @@ class ProductDetailsPage extends StatelessWidget {
                         onPressed: () => Navigator.of(context).pop(),
                       ),
                     ),
-                    
                   ],
                 ),
               ),
               Container(
+                margin: EdgeInsets.only(bottom: height * 1.5, left: width * 7, right: width * 7),
                 alignment: Alignment.centerRight,
                 child: Padding(
                   padding: EdgeInsets.only(right: width * 5),
                   child: cardProdutctSize(width, height),
                 ),
-              )
+              ),
+              Container(
+                margin: EdgeInsets.only(left: width * 7, right: width * 7),
+                height: height * 36.5,
+                alignment: Alignment.topCenter,
+                child: Container(
+                  height: height * 30,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/chicken_size.png')
+                    )
+                  ),
+                ),
+              ),
+              
             ],
           ),
         ),

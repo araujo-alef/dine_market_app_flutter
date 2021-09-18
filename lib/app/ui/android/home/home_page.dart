@@ -112,7 +112,7 @@ class HomePage extends GetView<HomeController> {
                                       borderRadius: BorderRadius.all(Radius.circular(20)),
                                     ),
                                     child: TextButton(
-                                        onPressed: () {},
+                                        onPressed: () {Get.toNamed('/product-details');},
                                         child: Container(
                                           width: width * 5,
                                           height: width * 5,

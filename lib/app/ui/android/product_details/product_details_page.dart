@@ -88,8 +88,9 @@ class ProductDetailsPage extends StatelessWidget {
                     margin: EdgeInsets.only(left: width * 7, right: width * 7),
                     child: Column(
                       children: [
-                        Padding(
-                          padding: EdgeInsets.only(top: height * 3.5, bottom: height * 4.5),
+                        Container(
+                          height: height * 13,
+                          padding: EdgeInsets.only(top: height * 3.5, bottom: height * 4.3),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -102,13 +103,50 @@ class ProductDetailsPage extends StatelessWidget {
                                   color: Color(0XFF212121)
                                 ),
                               ),
-                              
+                              Container(
+                                height: height * 5.2,
+                                width: width * 28,
+                                decoration: BoxDecoration(
+                                  color: Color(0XFFF6F7FC),
+                                  borderRadius: BorderRadius.all(Radius.circular(15))
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Container(
+                                      alignment: Alignment.center,
+                                      width: height * 2.8,
+                                      height: height * 2.8,
+                                      decoration: BoxDecoration(
+                                        color: Color(0XFFFFFFFF),
+                                        borderRadius: BorderRadius.all(Radius.circular(8))
+                                      ),
+                                      child: Icon(Icons.remove, size: width * 4,)
+                                    ),
+                                    Container(child: Text(
+                                      '2',
+                                      style: GoogleFonts.poppins(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 22,
+                                        color: Color(0XFF212121)
+                                      ),
+                                    )),
+                                    Container(
+                                      width: height * 2.8,
+                                      height: height * 2.8,
+                                      decoration: BoxDecoration(
+                                        color: Color(0XFF212121),
+                                        borderRadius: BorderRadius.all(Radius.circular(8))
+                                      ),
+                                      child: Icon(Icons.add_rounded, color: Colors.white, size: width * 4,),
+                                    ),
+                                  ]
+                                ),
+                              )
                             ],
                           ),
                         ),
-                        Container(
-                          color: Colors.blue,
-                        )
+                        
                       ],
                     ),
                   ),

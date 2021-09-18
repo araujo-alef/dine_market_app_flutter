@@ -13,10 +13,12 @@ class ProductDetailsPage extends StatelessWidget {
       backgroundColor: Color(0XFFF6F7FC),
       body: SafeArea(
         child: Container(
+          height: height * 100,
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only( left: width * 7, right: width * 7),
+                height: height * 9,
+                padding: EdgeInsets.only( left: width * 7, right: width * 7, bottom: height * 4, top: height * 0.5),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -58,7 +60,8 @@ class ProductDetailsPage extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(bottom: height * 1.5, left: width * 7, right: width * 7),
+                height: height * 8.6,
+                padding: EdgeInsets.only(bottom: height * 1.5, left: width * 7, right: width * 7),
                 alignment: Alignment.centerRight,
                 child: Padding(
                   padding: EdgeInsets.only(right: width * 5),
@@ -78,7 +81,39 @@ class ProductDetailsPage extends StatelessWidget {
                   ),
                 ),
               ),
-              
+              Expanded(
+                child: Container(
+                  color: Colors.white,
+                  child: Container(
+                    margin: EdgeInsets.only(left: width * 7, right: width * 7),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(top: height * 3.5, bottom: height * 4.5),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Chicken Meat',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: height * 3,
+                                  color: Color(0XFF212121)
+                                ),
+                              ),
+                              
+                            ],
+                          ),
+                        ),
+                        Container(
+                          color: Colors.blue,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -89,6 +124,7 @@ class ProductDetailsPage extends StatelessWidget {
   Widget cardProdutctSize(width, height) {
     return
     Container(
+      height: height * 7.1,
       child: Stack(
         children: [
           Positioned(
@@ -107,7 +143,7 @@ class ProductDetailsPage extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: width * 1.5),
+            margin: EdgeInsets.only(bottom: height * 0.5),
             width: width * 37,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -119,17 +155,20 @@ class ProductDetailsPage extends StatelessWidget {
                 children: [
                   Container(
                     width: width * 17,
-                    child: Text(
-                      'Size',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.bold,
-                        fontSize: height * 1.6
+                    child: SizedBox(
+                      child: Text(
+                        'Size',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.bold,
+                          fontSize: height * 1.6
+                        ),
                       ),
                     )
                   ),
                   Container(
                     width: width * 18,
+                    height: height * 3,
                     child: Padding(
                       padding: EdgeInsets.only(right:  width * 2),
                       child: Row(

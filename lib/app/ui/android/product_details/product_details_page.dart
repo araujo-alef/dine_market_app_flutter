@@ -50,7 +50,7 @@ class ProductDetailsPage extends StatelessWidget {
                         icon: Container(
                           child: Padding(
                             padding: EdgeInsets.all(height * 0.4),
-                            child: Image(image: AssetImage('assets/images/shopping_cart_icon.png'),
+                            child: Image(image: AssetImage('assets/images/shopping_cart_icon_dark.png'),
                         ),
                           )),
                         onPressed: () => Navigator.of(context).pop(),
@@ -143,6 +143,50 @@ class ProductDetailsPage extends StatelessWidget {
                                   ]
                                 ),
                               )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(bottom: height * 1.2),
+                          width: width * 100,
+                          child: Text(
+                            'Description',
+                            style: GoogleFonts.poppins(
+                              fontSize: height * 2,
+                              fontWeight: FontWeight.bold
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(bottom: height * 2.5),
+                          height: height * 13.5,
+                          child: Stack(
+                            children: [
+                              Container(
+                                height: height * 13,
+                                child: SingleChildScrollView(
+                                  child: Text(
+                                    'Freshly cut chicken from the farm. The chickens are guaranteed health and cleanliness so that they are free from disease. The slaughter process uses Islamic law so that it is guaranteed halal.',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: height * 1.53,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    colors: [
+                                      Color(0X00FFFFFF),
+                                      Color(0XFFFFFFFF),
+                                    ]
+                                  )
+                                ),
+                                height: height * 13,
+                              ),
                             ],
                           ),
                         ),

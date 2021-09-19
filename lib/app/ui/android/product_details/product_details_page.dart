@@ -78,11 +78,37 @@ class ProductDetailsPage extends StatelessWidget {
                 margin: EdgeInsets.only(left: width * 7, right: width * 7),
                 height: height * 37.5,
                 alignment: Alignment.topCenter,
-                child: Container(
-                  height: height * 30,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('assets/images/chicken_size.png'))),
+                child: Padding(
+                  padding: EdgeInsets.only(top: height * 0.5),
+                  child: Stack(
+                    children: [
+                      Container(
+                        height: height * 30,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('assets/images/chicken_size.png'))),
+                      ),
+                      Container(
+                        height: height * 37,
+                        alignment: Alignment.bottomCenter,
+                        child: Container(
+                          height: height * 22,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/golden_circular.png'),
+                              fit: BoxFit.fitWidth
+                            )
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: height * 30,
+                        decoration: BoxDecoration(
+                          color: Color(0X3FFFFFFF),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Expanded(

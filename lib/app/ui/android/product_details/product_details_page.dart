@@ -1,10 +1,14 @@
+import 'package:dine_market/app/controllers/product_details_controller/product_details_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProductDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final productDetailsController = Get.put(ProductDetailsController());
+
     final height = MediaQuery.of(context).size.height / 100;
     final width = MediaQuery.of(context).size.width / 100;
 
@@ -134,50 +138,61 @@ class ProductDetailsPage extends StatelessWidget {
                                     color: Color(0XFF212121)),
                               ),
                               Container(
-                                height: height * 5.2,
                                 width: width * 28,
                                 decoration: BoxDecoration(
                                     color: Color(0XFFF6F7FC),
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(15))),
-                                child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      Container(
-                                          alignment: Alignment.center,
-                                          width: height * 2.8,
-                                          height: height * 2.8,
-                                          decoration: BoxDecoration(
-                                              color: Color(0XFFFFFFFF),
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(8))),
-                                          child: Icon(
-                                            Icons.remove,
-                                            size: width * 4,
-                                          )),
-                                      Container(
-                                          child: Text(
-                                        '2',
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 22,
-                                            color: Color(0XFF212121)),
-                                      )),
-                                      Container(
-                                        width: height * 2.8,
-                                        height: height * 2.8,
-                                        decoration: BoxDecoration(
-                                            color: Color(0XFF212121),
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(8))),
-                                        child: Icon(
-                                          Icons.add_rounded,
-                                          color: Colors.white,
-                                          size: width * 4,
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: width * 2),
+                                  child: Row(
+                                      children: [
+                                        Expanded(
+                                          flex: 1,
+                                          child: Container(
+                                              alignment: Alignment.center,
+                                              width: height * 2.8,
+                                              height: height * 2.8,
+                                              decoration: BoxDecoration(
+                                                  color: Color(0XFFFFFFFF),
+                                                  borderRadius: BorderRadius.all(
+                                                      Radius.circular(8))),
+                                              child: Icon(
+                                                Icons.remove,
+                                                size: width * 4,
+                                              )),
                                         ),
-                                      ),
-                                    ]),
+                                        Expanded(
+                                          flex: 2,
+                                          child: Container(
+                                            alignment: Alignment.center,
+                                            child: Text(
+                                            '2',
+                                            style: GoogleFonts.poppins(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 22,
+                                                color: Color(0XFF212121)),
+                                            ),
+                                          ),
+                                        ),
+                                        Expanded(
+                                          flex: 1,
+                                          child: Container(
+                                            width: height * 2.8,
+                                            height: height * 2.8,
+                                            decoration: BoxDecoration(
+                                                color: Color(0XFF212121),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(8))),
+                                            child: Icon(
+                                              Icons.add_rounded,
+                                              color: Colors.white,
+                                              size: width * 4,
+                                            ),
+                                          ),
+                                        ),
+                                      ]),
+                                ),
                               )
                             ],
                           ),

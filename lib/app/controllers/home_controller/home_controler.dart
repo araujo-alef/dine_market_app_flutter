@@ -5,6 +5,5 @@ class HomeController extends GetxController {
 
   setPositionCard(index) {
     activePositionCard.value = index;
-    print(activePositionCard.value.toString());
   }
 }

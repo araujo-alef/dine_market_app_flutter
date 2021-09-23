@@ -1,3 +1,4 @@
+import 'package:dine_market/app/controllers/home_controller/home_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
@@ -5,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-import 'package:dine_market/app/controllers/home_controller/home_controler.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends GetView<HomeController> {

@@ -1,13 +1,13 @@
-import 'package:dine_market/app/controllers/product_details_controller/product_details_controller.dart';
+import 'package:dine_market/app/bloc/product_details_bloc/product_details_bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProductDetailsPage extends StatelessWidget {
+  final quantProduct = QuantProductBloc();
+
   @override
   Widget build(BuildContext context) {
-    final productDetailsController = Get.put(ProductDetailsController());
 
     final height = MediaQuery.of(context).size.height / 100;
     final width = MediaQuery.of(context).size.width / 100;
@@ -149,45 +149,57 @@ class ProductDetailsPage extends StatelessWidget {
                                       children: [
                                         Expanded(
                                           flex: 1,
-                                          child: Container(
-                                              alignment: Alignment.center,
-                                              width: height * 2.8,
-                                              height: height * 2.8,
-                                              decoration: BoxDecoration(
-                                                  color: Color(0XFFFFFFFF),
-                                                  borderRadius: BorderRadius.all(
-                                                      Radius.circular(8))),
-                                              child: Icon(
-                                                Icons.remove,
-                                                size: width * 4,
-                                              )),
+                                          child: InkWell(
+                                            onTap: () => quantProduct.decrementQuant(),
+                                            child: Container(
+                                                alignment: Alignment.center,
+                                                width: height * 2.8,
+                                                height: height * 2.8,
+                                                decoration: BoxDecoration(
+                                                    color: Color(0XFFFFFFFF),
+                                                    borderRadius: BorderRadius.all(
+                                                        Radius.circular(8))),
+                                                child: Icon(
+                                                  Icons.remove,
+                                                  size: width * 4,
+                                                )),
+                                          ),
                                         ),
                                         Expanded(
                                           flex: 2,
                                           child: Container(
                                             alignment: Alignment.center,
-                                            child: Text(
-                                            '2',
-                                            style: GoogleFonts.poppins(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 22,
-                                                color: Color(0XFF212121)),
-                                            ),
+                                            child: StreamBuilder<int>(
+                                              stream: quantProduct.quantStream,
+                                              initialData: 1,
+                                              builder: (_, __) {
+                                                return Text(
+                                                  quantProduct.quant.toString(),
+                                                  style: GoogleFonts.poppins(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 22,
+                                                  color: Color(0XFF212121)),
+                                                );
+                                              },
+                                            )
                                           ),
                                         ),
                                         Expanded(
                                           flex: 1,
-                                          child: Container(
-                                            width: height * 2.8,
-                                            height: height * 2.8,
-                                            decoration: BoxDecoration(
-                                                color: Color(0XFF212121),
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(8))),
-                                            child: Icon(
-                                              Icons.add_rounded,
-                                              color: Colors.white,
-                                              size: width * 4,
+                                          child: InkWell(
+                                            onTap: () => quantProduct.incrementQuant(),
+                                            child: Container(
+                                              width: height * 2.8,
+                                              height: height * 2.8,
+                                              decoration: BoxDecoration(
+                                                  color: Color(0XFF212121),
+                                                  borderRadius: BorderRadius.all(
+                                                      Radius.circular(8))),
+                                              child: Icon(
+                                                Icons.add_rounded,
+                                                color: Colors.white,
+                                                size: width * 4,
+                                              ),
                                             ),
                                           ),
                                         ),
